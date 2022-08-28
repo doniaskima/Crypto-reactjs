@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ coins, setCoins }) => {
+    const [search, setSearch] = useState("");
     const getInputValue = (e) => {
         const inputValue = e.target.value
+        coins.filter((value) => {
+            if (inputValue === "") {
+                return setCoins([]);
+            } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
+                return setSearch(value);
+            }
+        })
     }
     return (
         <div className="price-tracker">
