@@ -4,6 +4,14 @@
     padding: 0;
 }
 
+.red {
+    color: red;
+}
+
+.green {
+    color: #01a109;
+}
+
 body {
     background-color: #0b2434;
     color: #f6f6f6;
@@ -77,4 +85,11 @@ body {
 .coin-name {
     font-size: 1rem;
     margin: 0 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

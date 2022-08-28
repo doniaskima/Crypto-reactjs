@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from './components/SearchBar'
 import CoinList from './components/CoinList';
-
+import LoadMore from "./components/LoadMore"
 function App() {
   const [coins, setCoins] = useState([]);
   const [page, setPage] = useState(null);
@@ -18,10 +18,14 @@ function App() {
     }
     fetchData()
   }, [page])
+  const handleClick = () => {
+    setPage(page + 1)
+  }
   return (
     <div className="App">
       <SearchBar />
       <CoinList coins={coins} />
+      <LoadMore handleClick={handleClick} />
     </div>
   );
 }
